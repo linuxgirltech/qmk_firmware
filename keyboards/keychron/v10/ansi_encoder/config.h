@@ -21,3 +21,15 @@
 
 /* Enable caps-lock LED */
 #define CAPS_LOCK_LED_INDEX 48
+
+// Force the keyboard to ignore USB suspend signals
+#undef USB_SUSPEND_WAKEUP_DELAY
+#define USB_SUSPEND_WAKEUP_DELAY 0
+
+// Disable the internal firmware sleep timer entirely
+#undef KEYBOARD_SLEEP_TIMEOUT
+#define KEYBOARD_SLEEP_TIMEOUT 0
+
+// Optional: Increase the power draw limit so it doesn't "brown out"
+#undef USB_MAX_POWER_CONSUMPTION
+#define USB_MAX_POWER_CONSUMPTION 500
