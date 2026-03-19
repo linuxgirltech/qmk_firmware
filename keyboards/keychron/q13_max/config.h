@@ -42,14 +42,11 @@
 
 #        define LED_DRIVER_SHUTDOWN_PIN B7
 
-#        define BT_HOST_LED_MATRIX_LIST \
-            { 20, 21, 22 }
+#        define BT_HOST_LED_MATRIX_LIST {20, 21, 22}
 
-#        define P2P4G_HOST_LED_MATRIX_LIST \
-           { 23 }
+#        define P2P4G_HOST_LED_MATRIX_LIST {23}
 
-#        define BAT_LEVEL_LED_LIST \
-            { 20, 21, 22, 23, 24, 25, 26, 27, 28, 29 }
+#        define BAT_LEVEL_LED_LIST {20, 21, 22, 23, 24, 25, 26, 27, 28, 29}
 
 /* Backlit disable timeout when keyboard is disconnected(unit: second) */
 #        define DISCONNECTED_BACKLIGHT_DISABLE_TIMEOUT 40

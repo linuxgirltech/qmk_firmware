@@ -25,8 +25,7 @@
 #    define SPI_MISO_PIN A6
 #    define SPI_MOSI_PIN A7
 
-#    define DRIVER_CS_PINS \
-        { B8, B9 }
+#    define DRIVER_CS_PINS {B8, B9}
 #    define SNLED23751_SPI_DIVISOR 16
 #    define SPI_DRIVER SPID1
 
@@ -34,8 +33,7 @@
 #    define SNLED27351_PHASE_CHANNEL MSKPHASE_12CHANNEL
 
 /* Set LED driver current */
-#    define SNLED27351_CURRENT_TUNE \
-        { 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E }
+#    define SNLED27351_CURRENT_TUNE {0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E, 0x2E}
 
 /* Set to infinit, which is use in USB mode by default */
 #    define RGB_MATRIX_TIMEOUT RGB_MATRIX_TIMEOUT_INFINITE
@@ -48,9 +46,21 @@
 /* Indication led */
 #    define NUM_LOCK_INDEX 33
 #    define CAPS_LOCK_INDEX 57
-#    define LOW_BAT_IND_INDEX  { 96, 98 }
+#    define LOW_BAT_IND_INDEX {96, 98}
 
 #    define RGB_MATRIX_KEYPRESSES
 #    define RGB_MATRIX_FRAMEBUFFER_EFFECTS
 
 #endif
+
+// Force the keyboard to ignore USB suspend signals
+#undef USB_SUSPEND_WAKEUP_DELAY
+#define USB_SUSPEND_WAKEUP_DELAY 0
+
+// Disable the internal firmware sleep timer entirely
+#undef KEYBOARD_SLEEP_TIMEOUT
+#define KEYBOARD_SLEEP_TIMEOUT 0
+
+// Optional: Increase the power draw limit so it doesn't "brown out"
+#undef USB_MAX_POWER_CONSUMPTION
+#define USB_MAX_POWER_CONSUMPTION 500
